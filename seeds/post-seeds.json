@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Model View Controller",
+        "description": "MVC structure and how the architecture works.",
+        "user_id": 1
+      },
+      {
+        "title": "ORM",
+        "description": "Powerful way of creating queries in SQL ",
+        "user_id": 2
+      },
+      {
+        "title": "NPM",
+        "description": "A guide to the packages in NPM.",
+        "user_id": 3
+      }
+ 
+]

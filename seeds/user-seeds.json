@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Test User",
+        "email": "test@test.com",
+        "password": "password1234",
+    },
+
+
+    {
+        "name": "Second User",
+        "email": "second@test.com",
+        "password": "password1234",
+    },
+
+
+    {
+        "name": "Third User",
+        "email": "third@test.com",
+        "password": "password1234"
+    }
+]

@@ -5,8 +5,8 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
-const sequilize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(sessionStore);
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,7 +25,7 @@ const sess = {
     resave: false,
     saveUninitailized: true,
     store: new SequelizeStore({
-        db: sequilize
+        db: sequelize
     })
 };
 
@@ -36,10 +36,12 @@ app.set('view.engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(routes);
 
-sequilize.sync({ force: false}).then(() => {
+sequelize.sync({ force: false}).then(() => {
     app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
 })
 
