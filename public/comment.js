@@ -18,7 +18,7 @@ const commentFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace();///what is replaced where is redirect?
         } else {
-            alert('Failed to post comment')
+            alert('Failed to post comment!')
         }
     }
 }
